@@ -103,16 +103,7 @@ def health_check():
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Registro de routers
-#
-# Los routers se importan y registran aquí.
-# Cada router agrupa los endpoints de un dominio específico.
-#
-# NOTA: Se importan DESPUÉS de definir `app` para evitar importaciones
-# circulares. Los routers importarán `get_session` de database.py pero
-# no necesitan importar `app`.
 # ─────────────────────────────────────────────────────────────────────────────
-# Los routers se agregarán en las fases siguientes (1.2, 1.3, 1.4):
-# from app.routers import products, imports, kardex
-# app.include_router(products.router)
-# app.include_router(imports.router)
-# app.include_router(kardex.router)
+from app.routers.products import router as products_router
+
+app.include_router(products_router)

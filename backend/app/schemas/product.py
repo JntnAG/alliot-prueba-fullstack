@@ -2,7 +2,7 @@
 schemas/product.py — Esquemas de respuesta y contratos para Productos
 ====================================================================
 
-¿QUÉ HACE ESTE ARCHIVO? 
+¿QUÉ HACE ESTE ARCHIVO?
 ---------------------------------------------------
 Cuando un usuario consulta una lista de productos en una tienda online,
 no solo espera ver la lista de artículos. También necesita saber:

@@ -234,25 +234,25 @@ Dependencias principales:
 
 ### Filters
 
-- [ ] Implementar `app/criteria/filters.py`.
+- [x] Implementar `app/criteria/filters.py`.
 
 #### `FilterOperator`
-- [ ] `eq`
-- [ ] `contains`
-- [ ] `gt`
-- [ ] `gte`
-- [ ] `lt`
-- [ ] `lte`
-- [ ] `between`
+- [x] `eq`
+- [x] `contains`
+- [x] `gt`
+- [x] `gte`
+- [x] `lt`
+- [x] `lte`
+- [x] `between`
 
 #### `ProductField`
-- [ ] `sku`
-- [ ] `nombre`
-- [ ] `categoria`
-- [ ] `precio`
+- [x] `sku`
+- [x] `nombre`
+- [x] `categoria`
+- [x] `precio`
 
 #### `Filter`
-- [ ] Implementar dataclass:
+- [x] Implementar dataclass:
 
 ```text
 Filter(
@@ -266,20 +266,20 @@ Filter(
 
 ### ProductCriteria
 
-- [ ] Implementar `app/criteria/product_criteria.py`.
+- [x] Implementar `app/criteria/product_criteria.py`.
 
 #### Campos
-- [ ] `filters`
-- [ ] `page`
-- [ ] `page_size`
-- [ ] `order_by`
-- [ ] `order_dir`
+- [x] `filters`
+- [x] `page`
+- [x] `page_size`
+- [x] `order_by`
+- [x] `order_dir`
 
 ---
 
 ### Criteria Builder
 
-- [ ] Implementar `app/criteria/criteria_builder.py` para conversión de query parameters a `ProductCriteria`.
+- [x] Implementar `app/criteria/criteria_builder.py` para conversión de query parameters a `ProductCriteria`.
 
 Ejemplo:
 ```text
@@ -297,12 +297,12 @@ Debe convertirse internamente en un `ProductCriteria`.
 
 ### Criteria Interpreter
 
-- [ ] Implementar en `services/product_service.py`.
-- [ ] Traducir `ProductCriteria` a consultas SQLModel.
-- [ ] Aplicar filtros en base de datos.
-- [ ] Calcular total de registros.
-- [ ] Aplicar ordenamiento.
-- [ ] Aplicar paginación mediante `offset` y `limit`.
+- [x] Implementar en `services/product_service.py`.
+- [x] Traducir `ProductCriteria` a consultas SQLModel.
+- [x] Aplicar filtros en base de datos.
+- [x] Calcular total de registros.
+- [x] Aplicar ordenamiento.
+- [x] Aplicar paginación mediante `offset` y `limit`.
 
 #### Principio
 > Si mañana se agrega un nuevo filtro o cambia la consulta, no debe ser necesario modificar la firma del endpoint.
@@ -316,90 +316,90 @@ Debe convertirse internamente en un `ProductCriteria`.
 ### Productos
 
 #### Listado
-- [ ] Implementar:
+- [x] Implementar:
 
 ```text
 GET /products
 ```
 
 #### Query params
-- [ ] `q`
-- [ ] `categoria`
-- [ ] `precio_min`
-- [ ] `precio_max`
-- [ ] `page`
-- [ ] `page_size`
-- [ ] `order_by`
-- [ ] `order_dir`
+- [x] `q`
+- [x] `categoria`
+- [x] `precio_min`
+- [x] `precio_max`
+- [x] `page`
+- [x] `page_size`
+- [x] `order_by`
+- [x] `order_dir`
 
 #### Reglas
-- [ ] Búsqueda por nombre.
-- [ ] Búsqueda por SKU.
-- [ ] Filtro por categoría.
-- [ ] Filtro por rango de precio.
-- [ ] Ordenamiento.
-- [ ] Paginación.
+- [x] Búsqueda por nombre.
+- [x] Búsqueda por SKU.
+- [x] Filtro por categoría.
+- [x] Filtro por rango de precio.
+- [x] Ordenamiento.
+- [x] Paginación.
 
 ---
 
 ### Detalle
 
-- [ ] Implementar:
+- [x] Implementar:
 
 ```text
 GET /products/{id}
 ```
 
-- [ ] Retornar producto completo.
-- [ ] Retornar `404 Not Found` si no existe.
+- [x] Retornar producto completo.
+- [x] Retornar `404 Not Found` si no existe.
 
 ---
 
 ### Kardex
 
-- [ ] Implementar:
+- [x] Implementar:
 
 ```text
 GET /products/{id}/kardex
 ```
 
-- [ ] Retornar movimientos cronológicos.
-- [ ] Retornar saldo acumulado en unidades.
-- [ ] Retornar saldo valorizado.
-- [ ] Retornar costo promedio.
-- [ ] Retornar 404 si el producto no existe.
+- [x] Retornar movimientos cronológicos.
+- [x] Retornar saldo acumulado en unidades.
+- [x] Retornar saldo valorizado.
+- [x] Retornar costo promedio.
+- [x] Retornar 404 si el producto no existe.
 
 ---
 
 ### Importación Excel
 
-- [ ] Implementar endpoint:
+- [x] Implementar endpoint:
 
 ```text
 POST /products/import
 ```
 
-- [ ] Recibir archivo `.xlsx`.
-- [ ] Validar archivo.
-- [ ] Procesar fila por fila.
-- [ ] Detectar campos inválidos.
-- [ ] Detectar precios inválidos.
-- [ ] Detectar stocks inválidos.
-- [ ] Detectar SKU duplicado dentro del archivo (rechazar para evitar orden-dependencia).
-- [ ] Actualizar producto cuando SKU ya existe en BD (`UPDATE`).
-- [ ] Insertar producto cuando SKU no existe en BD (`INSERT`).
-- [ ] Continuar procesando filas válidas (resiliencia parcial).
-- [ ] Reportar filas rechazadas con número de fila, campo y motivo.
-- [ ] Retornar resumen final estructurado.
+- [x] Recibir archivo `.xlsx`.
+- [x] Validar archivo.
+- [x] Procesar fila por fila.
+- [x] Detectar campos inválidos.
+- [x] Detectar precios inválidos.
+- [x] Detectar stocks inválidos.
+- [x] Detectar SKU duplicado dentro del archivo (rechazar para evitar orden-dependencia).
+- [x] Actualizar producto cuando SKU ya existe en BD (`UPDATE`).
+- [x] Insertar producto cuando SKU no existe en BD (`INSERT`).
+- [x] Continuar procesando filas válidas (resiliencia parcial).
+- [x] Reportar filas rechazadas con número de fila, campo y motivo.
+- [x] Retornar resumen final estructurado.
 
 ---
 
 ### Manejo de errores
 
-- [ ] Retornar 404 para recursos inexistentes.
-- [ ] Retornar 422 para parámetros o datos inválidos.
-- [ ] Evitar usar 500 para errores de validación esperables.
-- [ ] Retornar mensajes claros y estructurados.
+- [x] Retornar 404 para recursos inexistentes.
+- [x] Retornar 422 para parámetros o datos inválidos.
+- [x] Evitar usar 500 para errores de validación esperables.
+- [x] Retornar mensajes claros y estructurados.
 
 ---
 
@@ -560,19 +560,19 @@ Ejemplo:
 ## 3.1 Pruebas unitarias
 
 ### `test_criteria.py`
-- [ ] Búsqueda por nombre.
-- [ ] Búsqueda por SKU.
-- [ ] Filtro por categoría.
-- [ ] Precio mínimo.
-- [ ] Precio máximo.
-- [ ] Rango de precios.
-- [ ] Ordenamiento ascendente.
-- [ ] Ordenamiento descendente.
-- [ ] Paginación.
-- [ ] Página fuera de rango.
-- [ ] Combinación de filtros.
-- [ ] Validación de campos permitidos.
-- [ ] Validación de operadores.
+- [x] Búsqueda por nombre.
+- [x] Búsqueda por SKU.
+- [x] Filtro por categoría.
+- [x] Precio mínimo.
+- [x] Precio máximo.
+- [x] Rango de precios.
+- [x] Ordenamiento ascendente.
+- [x] Ordenamiento descendente.
+- [x] Paginación.
+- [x] Página fuera de rango.
+- [x] Combinación de filtros.
+- [x] Validación de campos permitidos.
+- [x] Validación de operadores.
 
 ---
 
@@ -595,13 +595,13 @@ Ejemplo:
 ### `test_products_api.py`
 
 #### Listado
-- [ ] `GET /products` retorna 200.
-- [ ] Validar contrato de respuesta (`items`, `total`, `page`, `page_size`).
-- [ ] Validar paginación.
+- [x] `GET /products` retorna 200.
+- [x] Validar contrato de respuesta (`items`, `total`, `page`, `page_size`).
+- [x] Validar paginación.
 
 #### Búsqueda
-- [ ] Búsqueda combinada.
-- [ ] Búsqueda sin resultados:
+- [x] Búsqueda combinada.
+- [x] Búsqueda sin resultados:
 
 Resultado esperado:
 ```json
@@ -614,13 +614,13 @@ Resultado esperado:
 ```
 
 #### Detalle
-- [ ] Producto existente retorna 200.
-- [ ] Producto inexistente retorna 404.
+- [x] Producto existente retorna 200.
+- [x] Producto inexistente retorna 404.
 
 #### Kardex
-- [ ] Endpoint de Kardex para producto existente.
-- [ ] Kardex vacío si el producto no tiene movimientos.
-- [ ] Producto inexistente retorna 404.
+- [x] Endpoint de Kardex para producto existente.
+- [x] Kardex vacío si el producto no tiene movimientos.
+- [x] Producto inexistente retorna 404.
 
 ---
 

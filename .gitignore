@@ -51,6 +51,7 @@ next-env.d.ts
 htmlcov/
 .pytest_cache/
 
-# OS
+# OS & Temporary
 .DS_Store
 Thumbs.db
+~$*
