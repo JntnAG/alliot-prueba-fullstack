@@ -1,0 +1,46 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# requirements-dev.txt — Desarrollo LOCAL en Windows
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# ¿POR QUÉ ESTE ARCHIVO SEPARADO?
+# --------------------------------
+# psycopg2-binary (driver de PostgreSQL) requiere compilación C en Windows
+# y no tiene wheels precompilados para Python 3.14 todavía.
+#
+# En desarrollo local usamos SQLite como base de datos (más simple, sin
+# instalar PostgreSQL). El requirements.txt principal (con psycopg2-binary)
+# se usa DENTRO del contenedor Docker, que corre Linux donde sí hay wheels.
+#
+# Para usar SQLite en desarrollo, asegúrate de tener en tu .env:
+#   DATABASE_URL=sqlite:///./alliot.db
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Framework web y servidor ASGI
+# ─────────────────────────────────────────────────────────────────────────────
+fastapi==0.111.1
+uvicorn[standard]==0.30.1
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ORM / Base de datos
+# ─────────────────────────────────────────────────────────────────────────────
+sqlmodel==0.0.19
+# psycopg2-binary OMITIDO — no compila en Windows con Python 3.14
+# Si necesitas PostgreSQL local, instala PostgreSQL + psycopg2 manualmente
+# o usa el driver alternativo: pip install psycopg[binary]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Variables de entorno
+# ─────────────────────────────────────────────────────────────────────────────
+python-dotenv==1.0.1
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Procesamiento Excel
+# ─────────────────────────────────────────────────────────────────────────────
+openpyxl==3.1.4
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Testing
+# ─────────────────────────────────────────────────────────────────────────────
+pytest==8.2.2
+httpx==0.27.0

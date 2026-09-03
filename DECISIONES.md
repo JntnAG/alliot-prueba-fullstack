@@ -390,6 +390,9 @@ Esto evita inconsistencias incluso si existen:
 
 Para valores monetarios se utiliza `Decimal`, evitando problemas de precisión asociados al uso de `float`.
 
+**Campo `descripcion` opcional:**
+Aunque la lista mínima de campos del enunciado no detalla explícitamente `descripcion`, se incluye en el modelo como `str | None = None` para permitir registrar fichas técnicas y comerciales completas en la vista de detalle (`/products/[id]`), estándar en catálogos industriales. Al ser opcional con valor por defecto `None`, no rompe importaciones masivas ni contratos mínimos que no lo envíen.
+
 ---
 
 ## [DEC-004] Contrato de API para listado de productos
@@ -684,9 +687,22 @@ Se reporta y no se procesa.
 }
 ```
 
+### Endpoint
+
+```text
+POST /products/import
+```
+
+### Decisión de ruta
+Se establece la ruta oficial `POST /products/import` alineándose estrictamente con el enunciado oficial de la prueba técnica (Sección 4.2 y Anexo 8 del PDF). Al mismo tiempo, sigue la convención RESTful de ejecutar operaciones de ingesta o importación masiva directamente sobre la colección del recurso `products`.
+
 ### Justificación
 
-Esto permite aprovechar los registros correctos sin obligar al usuario a corregir todo el archivo por un único error.
+Esto permite aprovechar los registros correctos sin obligar al usuario a corregir todo el archivo por un único error (resiliencia parcial).
+
+**Estructura enriquecida del reporte de errores:**
+En el anexo de la prueba técnica se sugiere el formato base `{"fila": 14, "motivo": "precio no es un numero"}`. En nuestra solución se enriquece dicho contrato agregando el campo `campo` (`{"fila": 12, "campo": "precio", "motivo": "Valor no numérico o negativo"}`).
+*Justificación:* Proporcionar explícitamente el nombre de la columna afectada ahorra tiempo al usuario y permite que la interfaz frontend muestre badges o filtros precisos de error por campo, superando la ambigüedad de un mensaje puramente textual.
 
 ---
 

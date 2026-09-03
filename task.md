@@ -114,28 +114,28 @@ frontend/
 
 ## 1.1 Configuración base y persistencia
 
-- [ ] Crear `backend/requirements.txt`.
+- [x] Crear `backend/requirements.txt` y `requirements-dev.txt`.
 
 Dependencias principales:
-- [ ] `fastapi`
-- [ ] `uvicorn`
-- [ ] `sqlmodel`
-- [ ] `psycopg2-binary`
-- [ ] `python-dotenv`
-- [ ] `openpyxl`
-- [ ] `pytest`
-- [ ] `httpx`
+- [x] `fastapi`
+- [x] `uvicorn`
+- [x] `sqlmodel`
+- [x] `psycopg2-binary` (en requirements.txt para Docker; omitido en requirements-dev.txt por incompatibilidad Python 3.14/Windows)
+- [x] `python-dotenv`
+- [x] `openpyxl`
+- [x] `pytest`
+- [x] `httpx`
 
-- [ ] Configurar `app/database.py`.
-- [ ] Crear engine para PostgreSQL.
-- [ ] Permitir engine SQLite mediante `DATABASE_URL`.
-- [ ] Implementar generador `get_session`.
-- [ ] Crear tablas al iniciar la aplicación o mediante el mecanismo definido para la prueba.
-- [ ] Verificar arranque de FastAPI.
-- [ ] Verificar documentación Swagger en:
+- [x] Configurar `app/database.py`.
+- [x] Crear engine para PostgreSQL.
+- [x] Permitir engine SQLite mediante `DATABASE_URL`.
+- [x] Implementar generador `get_session`.
+- [x] Crear tablas al iniciar la aplicación (lifespan en main.py llama `create_db_and_tables()`).
+- [x] Verificar arranque de FastAPI (servidor responde en http://127.0.0.1:8000).
+- [x] Verificar documentación Swagger en:
 
 ```text
-/docs
+/docs  → OK (OpenAPI schema verificado, title y version correctos)
 ```
 
 ---
@@ -144,89 +144,89 @@ Dependencias principales:
 
 ### Producto
 
-- [ ] Implementar `app/models/product.py`.
+- [x] Implementar `app/models/product.py`.
 
 #### `ProductBase`
-- [ ] `sku`
-- [ ] `nombre`
-- [ ] `descripcion`
-- [ ] `categoria`
-- [ ] `precio` (usar `Decimal` para valores monetarios)
-- [ ] `stock`
-- [ ] `imagen_url`
+- [x] `sku`
+- [x] `nombre`
+- [x] `descripcion`
+- [x] `categoria`
+- [x] `precio` (usar `Decimal` para valores monetarios)
+- [x] `stock`
+- [x] `imagen_url`
 
 #### `Product`
-- [ ] Declarar tabla persistente (`table=True`).
-- [ ] `id` como primary key.
-- [ ] `sku` indexado.
-- [ ] Garantizar unicidad de `sku` mediante constraint real en base de datos (`UniqueConstraint("sku", name="uq_product_sku")`).
+- [x] Declarar tabla persistente (`table=True`).
+- [x] `id` como primary key.
+- [x] `sku` indexado.
+- [x] Garantizar unicidad de `sku` mediante constraint real en base de datos (`UniqueConstraint("sku", name="uq_product_sku")`).
 
 #### Schemas
-- [ ] Implementar `ProductCreate`.
-- [ ] Implementar `ProductRead`.
+- [x] Implementar `ProductCreate`.
+- [x] Implementar `ProductRead`.
 
 ---
 
 ### Movimientos de inventario
 
-- [ ] Implementar `app/models/stock_movement.py`.
+- [x] Implementar `app/models/stock_movement.py`.
 
 #### Enum
-- [ ] `MovementType.ENTRY`
-- [ ] `MovementType.EXIT`
+- [x] `MovementType.ENTRY`
+- [x] `MovementType.EXIT`
 
 #### `StockMovement`
-- [ ] `id`
-- [ ] `product_id` (foreign key a `product.id`, indexado)
-- [ ] `date`
-- [ ] `movement_type`
-- [ ] `quantity`
-- [ ] `unit_cost` (usar `Decimal`)
-- [ ] `reference_document`
+- [x] `id`
+- [x] `product_id` (foreign key a `product.id`, indexado)
+- [x] `date`
+- [x] `movement_type`
+- [x] `quantity`
+- [x] `unit_cost` (usar `Decimal`)
+- [x] `reference_document`
 
 ---
 
 ### Respuesta de listado
 
-- [ ] Implementar `app/schemas/product.py`.
+- [x] Implementar `app/schemas/product.py`.
 
 #### `ProductListResponse`
-- [ ] `items: list[ProductRead]`
-- [ ] `total: int`
-- [ ] `page: int`
-- [ ] `page_size: int`
+- [x] `items: list[ProductRead]`
+- [x] `total: int`
+- [x] `page: int`
+- [x] `page_size: int`
 
 ---
 
 ### Schemas de importación
 
-- [ ] Implementar `app/schemas/import_result.py`.
+- [x] Implementar `app/schemas/import_result.py`.
 
 #### Resultado
-- [ ] `leidas`
-- [ ] `insertadas`
-- [ ] `actualizadas`
-- [ ] `rechazadas`
-- [ ] `errores`
+- [x] `leidas`
+- [x] `insertadas`
+- [x] `actualizadas`
+- [x] `rechazadas`
+- [x] `errores`
 
 #### Error por fila
-- [ ] Número de fila.
-- [ ] Campo.
-- [ ] Motivo.
+- [x] Número de fila.
+- [x] Campo.
+- [x] Motivo.
 
 ---
 
 ### Schemas de Kardex
 
-- [ ] Implementar `app/schemas/kardex.py`.
-- [ ] Fecha.
-- [ ] Tipo de movimiento.
-- [ ] Cantidad.
-- [ ] Costo unitario.
-- [ ] Documento de referencia.
-- [ ] Saldo acumulado en unidades.
-- [ ] Saldo acumulado valorizado.
-- [ ] Costo promedio vigente.
+- [x] Implementar `app/schemas/kardex.py`.
+- [x] Fecha.
+- [x] Tipo de movimiento.
+- [x] Cantidad.
+- [x] Costo unitario.
+- [x] Documento de referencia.
+- [x] Saldo acumulado en unidades.
+- [x] Saldo acumulado valorizado.
+- [x] Costo promedio vigente.
 
 ---
 
@@ -376,7 +376,7 @@ GET /products/{id}/kardex
 - [ ] Implementar endpoint:
 
 ```text
-POST /imports/excel
+POST /products/import
 ```
 
 - [ ] Recibir archivo `.xlsx`.
@@ -541,7 +541,7 @@ Ejemplo:
 - [ ] Permitir seleccionar archivo `.xlsx`.
 - [ ] Validar que se haya seleccionado un archivo.
 - [ ] Mostrar estado de carga durante el upload.
-- [ ] Enviar archivo al backend (`POST /imports/excel`).
+- [ ] Enviar archivo al backend (`POST /products/import`).
 - [ ] Mostrar resumen:
   - [ ] `leidas`
   - [ ] `insertadas`
