@@ -35,10 +35,8 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
-# Environments (ignorar cualquier .env real o secundario, preservando únicamente .env.example)
-.env
-.env.*
-!.env.example
+# Environments (ignorar cualquier archivo que empiece por .env)
+.env*
 
 # IDEs
 .vscode/
