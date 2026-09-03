@@ -10,7 +10,7 @@
 
 ## Estructura inicial
 
-- [ ] Inicializar la estructura de carpetas según el diseño acordado:
+- [x] Inicializar la estructura de carpetas según el diseño acordado:
 
 ```text
 backend/
@@ -55,7 +55,7 @@ backend/
 └── Dockerfile
 ```
 
-- [ ] Inicializar proyecto frontend con estructura:
+- [x] Inicializar proyecto frontend con estructura:
 
 ```text
 frontend/
@@ -83,21 +83,21 @@ frontend/
 
 ## Variables de entorno
 
-- [ ] Crear `.env.example`.
-- [ ] Configurar `DATABASE_URL`.
-- [ ] Configurar PostgreSQL como entorno principal.
-- [ ] Permitir SQLite como alternativa de desarrollo.
-- [ ] Configurar `NEXT_PUBLIC_API_URL`.
-- [ ] Verificar que no existan credenciales reales en el repositorio.
+- [x] Crear `.env.example`.
+- [x] Configurar `DATABASE_URL`.
+- [x] Configurar PostgreSQL como entorno principal.
+- [x] Permitir SQLite como alternativa de desarrollo.
+- [x] Configurar `NEXT_PUBLIC_API_URL`.
+- [x] Verificar que no existan credenciales reales en el repositorio.
 
 ---
 
 ## Documentación inicial
 
-- [ ] Crear `README.md`.
-- [ ] Incluir descripción general del proyecto.
-- [ ] Incluir requisitos previos.
-- [ ] Reservar secciones para:
+- [x] Crear `README.md`.
+- [x] Incluir descripción general del proyecto.
+- [x] Incluir requisitos previos.
+- [x] Reservar secciones para:
   - Ejecución local.
   - Ejecución Docker.
   - Tests.
