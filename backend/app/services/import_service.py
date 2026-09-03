@@ -2,7 +2,7 @@
 services/import_service.py — Servicio de Importación Masiva de Productos desde Excel
 ===================================================================================
 
-¿QUÉ HACE ESTE ARCHIVO? (Explicado para dummies 💡)
+¿QUÉ HACE ESTE ARCHIVO?
 ---------------------------------------------------
 Imagina que te entregan una hoja de cálculo Excel (.xlsx) con 100 productos.
 Algunos son nuevos, otros ya los vendes (pero cambiaron de precio), y otros fueron

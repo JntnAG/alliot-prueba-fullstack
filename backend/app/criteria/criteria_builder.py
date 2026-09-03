@@ -2,7 +2,7 @@
 criteria/criteria_builder.py — Constructor de Criteria desde parámetros HTTP
 =============================================================================
 
-¿QUÉ HACE ESTE ARCHIVO? (Explicado para dummies 💡)
+¿QUÉ HACE ESTE ARCHIVO?
 ---------------------------------------------------
 Cuando un usuario en su navegador entra a:
   `/products?q=taladro&categoria=Herramientas&precio_min=10000&precio_max=80000&page=2`

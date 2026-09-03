@@ -2,7 +2,7 @@
 routers/products.py — Endpoints HTTP de Productos, Kardex e Importación Excel
 =============================================================================
 
-¿QUÉ HACE ESTE ARCHIVO? (Explicado para dummies 💡)
+¿QUÉ HACE ESTE ARCHIVO? 
 ---------------------------------------------------
 Este archivo es la "ventanilla de atención al público" de nuestra API para productos.
 Aquí se definen las direcciones URL que el navegador web (Next.js) o cualquier cliente puede llamar:

@@ -2,7 +2,7 @@
 generate_sample_data.py — Generador de archivo Excel y datos de prueba
 ======================================================================
 
-¿QUÉ HACE ESTE SCRIPT? (Explicado para dummies 💡)
+¿QUÉ HACE ESTE SCRIPT?
 ---------------------------------------------------
 1. Genera un archivo Excel real llamado 'sample_products.xlsx'.
    Contiene productos válidos y casos borde reales intencionales para probar

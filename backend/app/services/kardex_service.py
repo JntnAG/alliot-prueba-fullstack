@@ -2,7 +2,7 @@
 services/kardex_service.py — Servicio de Cálculo y Consulta de Kardex Valorizado
 ================================================================================
 
-¿QUÉ HACE ESTE ARCHIVO? (Explicado para dummies 💡)
+¿QUÉ HACE ESTE ARCHIVO?
 ---------------------------------------------------
 Imagina que eres el contador de una ferretería:
 1. El lunes compraste 10 taladros a $50.000 c/u.

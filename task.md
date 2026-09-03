@@ -405,24 +405,24 @@ POST /products/import
 
 ## 1.5 Seed de datos
 
-- [ ] Crear `backend/seed.py`.
+- [x] Crear `backend/seed.py`.
 
 ### Productos
-- [ ] Crear al menos 30 productos.
-- [ ] Variar categorías.
-- [ ] Variar precios.
-- [ ] Variar stock.
-- [ ] Incluir productos con y sin imagen.
+- [x] Crear al menos 30 productos (se crearon 35 productos industriales clasificados).
+- [x] Variar categorías (6 categorías diferentes).
+- [x] Variar precios ($3.990 a $389.990).
+- [x] Variar stock (0 a 200 unidades, incluyendo caso borde de stock agotado).
+- [x] Incluir productos con y sin imagen (para probar placeholders/fallbacks).
 
 ### Idempotencia
-- [ ] Ejecutar el seed más de una vez sin crear duplicados.
-- [ ] Utilizar SKU para identificar productos existentes.
+- [x] Ejecutar el seed más de una vez sin crear duplicados.
+- [x] Utilizar SKU para identificar productos existentes.
 
 ### Kardex
-- [ ] Generar movimientos de ejemplo.
-- [ ] Incluir entradas.
-- [ ] Incluir salidas.
-- [ ] Incluir diferentes costos de entrada.
+- [x] Generar movimientos de ejemplo.
+- [x] Incluir entradas.
+- [x] Incluir salidas.
+- [x] Incluir diferentes costos de entrada (demostrando el cálculo de Promedio Ponderado Móvil).
 
 ---
 
