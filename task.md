@@ -432,17 +432,17 @@ POST /products/import
 
 ## 2.1 Configuración y cliente API
 
-- [ ] Crear proyecto Next.js 14+.
-- [ ] Configurar TypeScript.
-- [ ] Configurar Tailwind CSS.
-- [ ] Crear tipos en:
+- [x] Crear proyecto Next.js 14+ (Next.js 16 con App Router y Turbopack).
+- [x] Configurar TypeScript (tsconfig.json, tipos estrictos y alias @/*).
+- [x] Configurar Tailwind CSS (@tailwindcss/postcss y @import "tailwindcss" en globals.css).
+- [x] Crear tipos en:
 
 ```text
 src/types/
 ```
 
-- [ ] Mantener tipos alineados con contratos de la API.
-- [ ] Implementar cliente HTTP en:
+- [x] Mantener tipos alineados con contratos de la API (Product, ProductListResponse, ProductQueryParams, KardexLine, ProductKardexResponse, ImportResult, RowError).
+- [x] Implementar cliente HTTP en:
 
 ```text
 src/lib/api.ts
@@ -453,26 +453,26 @@ src/lib/api.ts
 ## 2.2 Vista de listado `/products`
 
 ### Búsqueda y filtros
-- [ ] Barra de búsqueda por texto.
-- [ ] Filtro por categoría.
-- [ ] Filtro por precio mínimo.
-- [ ] Filtro por precio máximo.
+- [x] Barra de búsqueda por texto.
+- [x] Filtro por categoría.
+- [x] Filtro por precio mínimo.
+- [x] Filtro por precio máximo.
 
 ---
 
 ### Tabla
-- [ ] Mostrar miniatura con `next/image`.
-- [ ] Mostrar SKU.
-- [ ] Mostrar nombre.
-- [ ] Mostrar categoría.
-- [ ] Mostrar precio.
-- [ ] Mostrar stock.
+- [x] Mostrar miniatura con `next/image`.
+- [x] Mostrar SKU.
+- [x] Mostrar nombre.
+- [x] Mostrar categoría.
+- [x] Mostrar precio.
+- [x] Mostrar stock.
 
 ---
 
 ### Navegación
-- [ ] Hacer la fila completa navegable (`cursor: pointer`).
-- [ ] Navegar a:
+- [x] Hacer la fila completa navegable (`cursor: pointer`).
+- [x] Navegar a:
 
 ```text
 /products/[id]
@@ -481,9 +481,9 @@ src/lib/api.ts
 ---
 
 ### Paginación
-- [ ] Mostrar controles de paginación.
-- [ ] Sincronizar página con query params de la URL.
-- [ ] Mantener filtros al cambiar página.
+- [x] Mostrar controles de paginación.
+- [x] Sincronizar página con query params de la URL.
+- [x] Mantener filtros al cambiar página.
 
 Ejemplo:
 ```text
@@ -493,63 +493,63 @@ Ejemplo:
 ---
 
 ### Estados UI
-- [ ] Loading (Skeleton o spinner).
-- [ ] Empty state ("No se encontraron productos con los filtros seleccionados").
-- [ ] Error de red ("No fue posible cargar los productos. Intenta nuevamente").
-- [ ] Reintento cuando corresponda.
+- [x] Loading (Skeleton o spinner).
+- [x] Empty state ("No se encontraron productos con los filtros seleccionados").
+- [x] Error de red ("No fue posible cargar los productos. Intenta nuevamente").
+- [x] Reintento cuando corresponda.
 
 ---
 
 ## 2.3 Vista de detalle `/products/[id]`
 
 ### Información
-- [ ] Mostrar información completa.
-- [ ] Mostrar imagen destacada con `next/image`.
-- [ ] Implementar placeholder.
-- [ ] Implementar fallback para imágenes inválidas.
+- [x] Mostrar información completa (nombre, SKU, categoría, precio, stock, descripción y metadatos).
+- [x] Mostrar imagen destacada con `next/image`.
+- [x] Implementar placeholder (cuando el producto no tiene URL de imagen).
+- [x] Implementar fallback para imágenes inválidas (manejador onError con placeholder SVG).
 
 ---
 
 ### Navegación
-- [ ] Botón claro de regreso al listado.
+- [x] Botón claro de regreso al listado ("Volver al catálogo" y breadcrumb interactivo).
 
 ---
 
 ### Kardex
-- [ ] Consultar endpoint de Kardex.
-- [ ] Mostrar tabla de movimientos (`KardexTable.tsx`).
-- [ ] Mostrar tipo.
-- [ ] Mostrar fecha.
-- [ ] Mostrar cantidad.
-- [ ] Mostrar costo unitario.
-- [ ] Mostrar documento de referencia.
-- [ ] Mostrar saldo acumulado en unidades.
-- [ ] Mostrar valor acumulado monetario.
-- [ ] Mostrar costo promedio cuando corresponda.
+- [x] Consultar endpoint de Kardex (`GET /products/{id}/kardex`).
+- [x] Mostrar tabla de movimientos (`KardexTable.tsx`).
+- [x] Mostrar tipo (Badges diferenciados Entrada / Salida).
+- [x] Mostrar fecha (formateada DD/MM/AAAA HH:mm).
+- [x] Mostrar cantidad (+ para entrada, - para salida).
+- [x] Mostrar costo unitario.
+- [x] Mostrar documento de referencia (FAC-xxx, GUIA-xxx).
+- [x] Mostrar saldo acumulado en unidades.
+- [x] Mostrar valor acumulado monetario.
+- [x] Mostrar costo promedio cuando corresponda (Promedio Ponderado Móvil).
 
 ---
 
 ### Errores
-- [ ] Manejar producto inexistente.
-- [ ] Mostrar estado 404 comprensible.
+- [x] Manejar producto inexistente.
+- [x] Mostrar estado 404 comprensible (tarjeta 404 con código de error, mensaje amigable y botón de retorno al catálogo).
 
 ---
 
 ## 2.4 Módulo de Importación Excel
 
-- [ ] Crear vista o modal de importación (`/import` o `ImportForm.tsx`).
-- [ ] Permitir seleccionar archivo `.xlsx`.
-- [ ] Validar que se haya seleccionado un archivo.
-- [ ] Mostrar estado de carga durante el upload.
-- [ ] Enviar archivo al backend (`POST /products/import`).
-- [ ] Mostrar resumen:
-  - [ ] `leidas`
-  - [ ] `insertadas`
-  - [ ] `actualizadas`
-  - [ ] `rechazadas`
-- [ ] Mostrar lista de errores por fila.
-- [ ] Permitir volver al listado después de la importación.
-- [ ] Refrescar productos cuando sea necesario.
+- [x] Crear vista o modal de importación (`/import` y `ImportForm.tsx`).
+- [x] Permitir seleccionar archivo `.xlsx` (mediante selector de archivos o drag and drop).
+- [x] Validar que se haya seleccionado un archivo (validación de extensión .xlsx/.xlsm y tamaño).
+- [x] Mostrar estado de carga durante el upload (spinner animado y mensaje explicativo).
+- [x] Enviar archivo al backend (`POST /products/import` con multipart/form-data).
+- [x] Mostrar resumen:
+  - [x] `leidas`
+  - [x] `insertadas`
+  - [x] `actualizadas`
+  - [x] `rechazadas`
+- [x] Mostrar lista de errores por fila (tabla con fila, campo afectado y motivo detallado).
+- [x] Permitir volver al listado después de la importación (botón "Ver catálogo actualizado").
+- [x] Refrescar productos cuando sea necesario (enlace directo a /products con recarga de catálogo).
 
 ---
 
