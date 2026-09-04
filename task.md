@@ -577,16 +577,16 @@ Ejemplo:
 ---
 
 ### `test_kardex.py`
-- [ ] Entrada inicial.
-- [ ] Cálculo de saldo inicial.
-- [ ] Múltiples entradas.
-- [ ] Entradas a costos distintos.
-- [ ] Recalcular promedio ponderado.
-- [ ] Salida de existencias.
-- [ ] Mantener costo promedio en salida.
-- [ ] Validar saldo en unidades.
-- [ ] Validar saldo monetario.
-- [ ] Validar comportamiento ante stock insuficiente.
+- [x] Entrada inicial.
+- [x] Cálculo de saldo inicial.
+- [x] Múltiples entradas.
+- [x] Entradas a costos distintos.
+- [x] Recalcular promedio ponderado.
+- [x] Salida de existencias.
+- [x] Mantener costo promedio en salida.
+- [x] Validar saldo en unidades.
+- [x] Validar saldo monetario.
+- [x] Validar comportamiento ante stock insuficiente.
 
 ---
 
